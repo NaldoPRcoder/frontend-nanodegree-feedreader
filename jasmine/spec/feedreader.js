@@ -110,13 +110,16 @@ $(function() {
         beforeEach(function(done) {
           loadFeed(0, function(){
             feedOne = $(".feed").html();
-            done();
-          });
-
-          loadFeed(1, function(){
+            // done();
+          // });
+          ;
+          loadFeed(1,done);
+            /* ** This function created a race condition becasue it was going after
+            the same resource as the function on top
+            loadFeed(1, function(){
             feedTwo = $(".feed").html();
-            done();
-          })
+            done();*/
+          });
         });
         it('New feed is loaded and content changes', function(){
           expect(feedOne === feedTwo).toBe(false);
