@@ -92,7 +92,7 @@ $(function() {
            loadFeed(0, done);
          });
 
-         it('single entry within feed container', function(){
+         it('single entry', function(){
            expect($(".feed .entry").length).toBeGreaterThan(0);
          });
       });
@@ -118,7 +118,7 @@ $(function() {
             done();
           })
         });
-        it('content changes when new feed is loaded', function(){
+        it('New feed is loaded and content changes', function(){
           expect(feedOne === feedTwo).toBe(false);
         });
       });
