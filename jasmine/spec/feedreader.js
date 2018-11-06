@@ -112,13 +112,15 @@ $(function() {
             feedOne = $(".feed").html();
             // done();
           // });
-          ;
-          loadFeed(1,done);
+
+          loadFeed(1, function () {
+            feedTwo = $(".feed").html();
+            done();
+          });
             /* ** This function created a race condition becasue it was going after
             the same resource as the function on top
             loadFeed(1, function(){
-            feedTwo = $(".feed").html();
-            done();*/
+            */
           });
         });
         it('New feed is loaded and content changes', function(){
